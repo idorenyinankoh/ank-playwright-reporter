@@ -16,7 +16,7 @@ A comprehensive and visually appealing reporter for Playwright test results with
 ## 🚀 Installation
 
 ```bash
-npm install @your-username/playwright-enhanced-reporter
+npm install playwright-enhanced-reporter
 ```
 
 ## 📋 Quick Start
@@ -27,7 +27,7 @@ Add the reporter to your `playwright.config.js`:
 module.exports = {
   // ... other config
   reporter: [
-    ['@your-username/playwright-enhanced-reporter', {
+    ['playwright-enhanced-reporter', {
       outputFile: 'test-report.json',
       outputDir: 'test-results',
       slackWebhookUrl: 'your-slack-webhook-url' // Optional
@@ -86,7 +86,7 @@ Enable Slack notifications by providing a webhook URL:
 
 ```javascript
 reporter: [
-  ['@your-username/playwright-enhanced-reporter', {
+  ['playwright-enhanced-reporter', {
     slackWebhookUrl: 'https://hooks.slack.com/services/YOUR/WEBHOOK/URL',
     slackChannel: '#qa-team',
     slackUsername: 'QA Bot'
@@ -109,7 +109,7 @@ Use alongside other Playwright reporters:
 ```javascript
 reporter: [
   ['html'],
-  ['@your-username/playwright-enhanced-reporter'],
+  ['playwright-enhanced-reporter'],
   ['list']
 ]
 ```
@@ -118,7 +118,7 @@ reporter: [
 ```javascript
 const config = {
   reporter: [
-    ['@your-username/playwright-enhanced-reporter', {
+    ['playwright-enhanced-reporter', {
       slackWebhookUrl: process.env.SLACK_WEBHOOK_URL,
       slackEnabled: process.env.CI === 'true'
     }]
@@ -151,7 +151,7 @@ Total: 5 | ✅ Passed: 4 | ❌ Failed: 1 | ⏭️ Skipped: 0
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/playwright-enhanced-reporter.git
+git clone https://github.com/iankoh/playwright-enhanced-reporter.git
 
 # Install dependencies
 npm install
@@ -174,9 +174,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/your-username/playwright-enhanced-reporter)
-- [npm Package](https://www.npmjs.com/package/@your-username/playwright-enhanced-reporter)
-- [Issues](https://github.com/your-username/playwright-enhanced-reporter/issues)
+- [GitHub Repository](https://github.com/iankoh/playwright-enhanced-reporter)
+- [npm Package](https://www.npmjs.com/package/playwright-enhanced-reporter)
+- [Issues](https://github.com/iankoh/playwright-enhanced-reporter/issues)
 
 ## 🙏 Acknowledgments
 
