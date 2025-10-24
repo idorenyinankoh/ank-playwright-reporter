@@ -1,5 +1,5 @@
 {
-  "name": "@your-username/playwright-enhanced-reporter",
+  "name": "iankoh/playwright-enhanced-reporter",
   "version": "1.0.0",
   "description": "A comprehensive and visually appealing reporter for Playwright test results with detailed insights, analytics, and Slack notifications",
   "main": "index.js",
@@ -23,7 +23,7 @@
     "qa",
     "testing-tools"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "iamankoh@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",

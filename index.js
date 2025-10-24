@@ -84,23 +84,13 @@ class EnhancedReporter {
   extractSuiteName(test) {
     // Walk up the parent chain to find describe blocks
     let current = test.parent;
-    const suiteNames = [];
-    
-    while (current && current.title !== '') {
-      // Look for actual describe blocks - they usually have titles that aren't project names
-      if (current.title && 
-          current.title !== current.project()?.name && 
-          current.title !== 'Root') {
-        suiteNames.unshift(current.title);
-      }
-      current = current.parent;
-    }
-    
+
     // Return the top-level describe block name first, fallback to filename only if no describe blocks
-    if (suiteNames.length > 0) {
-      return suiteNames[0]; // Return the actual describe block name
+    if (test.parent) {
+      return test.parent.title; // Return the actual describe block name
+
     }
-    
+
     // Only use filename as fallback if no describe blocks exist
     return path.basename(test.location.file, '.spec.js').replace(/-/g, ' ');
   }
