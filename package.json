@@ -1,5 +1,5 @@
 {
-  "name": "playwright-enhanced-reporter",
+  "name": "ank-playwright-reporter",
   "version": "1.0.0",
   "description": "A comprehensive and visually appealing reporter for Playwright test results with detailed insights, analytics, and Slack notifications",
   "main": "index.js",
@@ -23,16 +23,16 @@
     "qa",
     "testing-tools"
   ],
-  "author": "Ian Yankoh <your.email@example.com>",
+  "author": "Idorenyin ankoh",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iankoh/playwright-enhanced-reporter.git"
+    "url": "https://github.com/iankoh/ank-playwright-reporter.git"
   },
   "bugs": {
-    "url": "https://github.com/iankoh/playwright-enhanced-reporter/issues"
+    "url": "https://github.com/iankoh/ank-playwright-reporter/issues"
   },
-  "homepage": "https://github.com/iankoh/playwright-enhanced-reporter#readme",
+  "homepage": "https://github.com/iankoh/ank-playwright-reporter#readme",
   "engines": {
     "node": ">=14.0.0"
   },
