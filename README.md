@@ -174,9 +174,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/iankoh/ank-playwright-reporter)
+- [GitHub Repository](https://github.com/idorenyinankoh/ank-playwright-reporter)
 - [npm Package](https://www.npmjs.com/package/ank-playwright-reporter)
-- [Issues](https://github.com/iankoh/ank-playwright-reporter/issues)
+- [Issues](https://github.com/idorenyinankoh/ank-playwright-reporter/issues)
 
 ## 🙏 Acknowledgments
 
