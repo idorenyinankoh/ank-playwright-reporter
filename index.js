@@ -269,14 +269,29 @@ class EnhancedReporter {
         for (const [suiteName, tests] of Object.entries(structuredReport)) {
           tests.filter(test => test.result === 'failed').forEach(test => {
             const failedAssertions = test.assertions.filter(assertion => assertion.status === 'failed');
-            failedTests.push(`❌ *${test.testName}* (${test.duration})\n   └ Failed assertions: ${failedAssertions.map(a => a.name).join(', ')}`);
+            failedTests.push(`:x: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Failed assertions: ${failedAssertions.map(a => a.name).join(', ')}`);
           });
         }
-
         slackPayload.attachments.push({
           color: 'danger',
-          title: `💥 Failed Tests (${summary.failed})`,
+          title: `:boom: Failure Tests (${summary.failed})`,
           text: failedTests.join('\n\n'),
+          mrkdwn_in: ['text']
+        });
+      }
+      // Add success test details if any - IMPROVED FORMAT
+      if (summary.failed > 0) {
+        const passedTests = [];
+        for (const [suiteName, tests] of Object.entries(structuredReport)) {
+          tests.filter(test => test.result === 'passed').forEach(test => {
+            const SuccessAssertions = test.assertions.filter(assertion => assertion.status === 'passed');
+            passedTests.push(`:white_check_mark: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Passed assertions: ${SuccessAssertions.map(a => a.name).join(', ')}`);
+          });
+        }
+        slackPayload.attachments.push({
+          color: 'danger',
+          title: ` :white_check_mark: Passed Tests (${summary.passed})`,
+          text: passedTests.join('\n\n'),
           mrkdwn_in: ['text']
         });
       }
