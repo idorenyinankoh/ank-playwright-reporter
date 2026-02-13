@@ -255,7 +255,7 @@ class EnhancedReporter {
                 short: true
               }
             ],
-            footer: 'Enhanced Playwright Reporter',
+            footer: 'Detailed Report by executed Test',
             ts: Math.floor(new Date().getTime() / 1000)
           }
         ]
@@ -269,7 +269,7 @@ class EnhancedReporter {
         for (const [suiteName, tests] of Object.entries(structuredReport)) {
           tests.filter(test => test.result === 'failed').forEach(test => {
             const failedAssertions = test.assertions.filter(assertion => assertion.status === 'failed');
-            failedTests.push(`:x: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Failed assertions: ${failedAssertions.map(a => a.name).join(', ')}`);
+            failedTests.push(`:x: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Failed assertions: ${failedAssertions.map(a => a.name).join(',\n')}`);
           });
         }
         slackPayload.attachments.push({
@@ -285,7 +285,7 @@ class EnhancedReporter {
         for (const [suiteName, tests] of Object.entries(structuredReport)) {
           tests.filter(test => test.result === 'passed').forEach(test => {
             const SuccessAssertions = test.assertions.filter(assertion => assertion.status === 'passed');
-            passedTests.push(`:white_check_mark: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Passed assertions: ${SuccessAssertions.map(a => a.name).join(', ')}`);
+            passedTests.push(`:white_check_mark: (${suiteName})\n *${test.testName}* (${test.duration})\n   └ Passed assertions: ${SuccessAssertions.map(a => a.name).join(',\n')}`);
           });
         }
         slackPayload.attachments.push({
