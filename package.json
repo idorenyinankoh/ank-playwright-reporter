@@ -1,6 +1,6 @@
 {
   "name": "ank-playwright-reporter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A comprehensive and visually appealing reporter for Playwright test results with detailed insights, analytics, and Slack notifications",
   "main": "index.js",
   "scripts": {
